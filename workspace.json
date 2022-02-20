@@ -3,5 +3,6 @@
   "projects": {
     "next-test": "apps/next-test",
     "next-test-e2e": "apps/next-test-e2e",
+    "node-test": "apps/node-test"
   }
 }
