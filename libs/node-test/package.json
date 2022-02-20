@@ -1,7 +1,0 @@
-{
-  "name": "@nx-test/node-test",
-  "version": "0.0.0",
-  "scripts": {
-    "test": "node index.js"
-  }
-}
