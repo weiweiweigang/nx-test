@@ -3,10 +3,6 @@
   "projects": {
     "next-test": "apps/next-test",
     "next-test-e2e": "apps/next-test-e2e",
-    "next-test2": "apps/next-test2",
-    "next-test2-e2e": "apps/next-test2-e2e",
-    "next-test3": "apps/next-test3",
-    "next-test3-e2e": "apps/next-test3-e2e",
     "node-test": "libs\\node-test"
   }
 }
