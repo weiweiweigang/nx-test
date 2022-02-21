@@ -4,25 +4,23 @@
  * @LastEditors: Strayer
  * @LastEditTime: 2022-02-21
  * @Description: 
- * @FilePath: \test2\nx-test\apps\next-test\pages\shopping-cart\index.tsx
+ * @FilePath: \nx-test\apps\next-test\pages\shopping-cart\index.tsx
  */
 import Link from "next/link"
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { GetCommodityListApi } from "./api";
 import styleIndex from './index.module.scss'
 
-export default function ShoppingCart(props) {
-  
-  const [commodityList, setCommodityList] = useState([{
-    name: 'a',
-    price: 100,
-    count: 1
-  },{
-    name: 'b',
-    price: 200,
-    count: 1
-  }])
+type commodityType = {
+  name: string;
+  price: number;
+  count: number;
+}
 
-  const sumTotalPrice = () => {
+export default function ShoppingCart(props) {
+  const [commodityList, setCommodityList] = useState<commodityType []>([])
+
+  const sumTotalPrice = (commodityList: commodityType []) => {
     let  totalPrice = 0;
     for(const item of commodityList) {
       totalPrice += item.price * item.count
@@ -30,7 +28,7 @@ export default function ShoppingCart(props) {
     return totalPrice
   }
 
-  const [totalPrice, setTotalPrice] = useState(sumTotalPrice());
+  const [totalPrice, setTotalPrice] = useState(0);
 
   const addCount = function(commodityName: string) {
     for(const item of commodityList) {
@@ -39,8 +37,22 @@ export default function ShoppingCart(props) {
       }
     }
     setCommodityList([...commodityList]);
-    setTotalPrice(sumTotalPrice());
+    setTotalPrice(sumTotalPrice(commodityList));
   }
+
+  useEffect(() => {
+    GetCommodityListApi().then(data => {
+      const commodityList: commodityType [] = [];
+      for(const item of data) {
+        commodityList.push({
+          ...item,
+          count: 1
+        })
+      }
+      setCommodityList([...commodityList]);
+      setTotalPrice(sumTotalPrice(commodityList));
+    })
+  }, [])
 
   const getTableBody =function() {
     const  trList = [];

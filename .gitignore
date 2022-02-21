@@ -7,6 +7,8 @@
 
 # dependencies
 /node_modules
+.history
+yarn.lock
 
 # IDEs and editors
 /.idea
