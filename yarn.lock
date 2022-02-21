@@ -2624,7 +2624,7 @@
   "resolved" "https://registry.npmjs.org/abab/-/abab-2.0.5.tgz"
   "version" "2.0.5"
 
-"accepts@~1.3.4", "accepts@~1.3.5", "accepts@~1.3.8":
+"accepts@^1.3.7", "accepts@~1.3.4", "accepts@~1.3.5", "accepts@~1.3.8":
   "integrity" "sha512-PYAthTa2m2VKxuvSD3DPC/Gy+U+sOA1LAuT8mkmRuvw+NACSaeXEQ+NHcVF7rONl6qcaxV3Uuemwawk+7+SJLw=="
   "resolved" "https://registry.npmjs.org/accepts/-/accepts-1.3.8.tgz"
   "version" "1.3.8"
@@ -3642,7 +3642,7 @@
   dependencies:
     "safe-buffer" "5.2.1"
 
-"content-type@~1.0.4":
+"content-type@^1.0.4", "content-type@~1.0.4":
   "integrity" "sha512-hIP3EEPs8tB9AT1L+NUqtwOAps4mk2Zob89MWXMHjHWg9milF/j4osnnQLXBCBFBk/tvIG/tUc9mOUJiPBhPXA=="
   "resolved" "https://registry.npmjs.org/content-type/-/content-type-1.0.4.tgz"
   "version" "1.0.4"
@@ -4725,6 +4725,16 @@
     "jest-matcher-utils" "^27.5.1"
     "jest-message-util" "^27.5.1"
 
+"express-graphql@^0.12.0":
+  "integrity" "sha512-DwYaJQy0amdy3pgNtiTDuGGM2BLdj+YO2SgbKoLliCfuHv3VVTt7vNG/ZqK2hRYjtYHE2t2KB705EU94mE64zg=="
+  "resolved" "https://registry.npmjs.org/express-graphql/-/express-graphql-0.12.0.tgz"
+  "version" "0.12.0"
+  dependencies:
+    "accepts" "^1.3.7"
+    "content-type" "^1.0.4"
+    "http-errors" "1.8.0"
+    "raw-body" "^2.4.1"
+
 "express@^4.17.1", "express@^4.17.3":
   "integrity" "sha512-yuSQpz5I+Ch7gFrPCk4/c+dIBKlQUxtgwqzph132bsT6qhuzss6I8cLJQz7B3rFblzd6wtcI0ZbGltH/C4LjUg=="
   "resolved" "https://registry.npmjs.org/express/-/express-4.17.3.tgz"
@@ -5269,6 +5279,11 @@
   "resolved" "https://registry.npmjs.org/graceful-fs/-/graceful-fs-4.2.9.tgz"
   "version" "4.2.9"
 
+"graphql@^14.7.0 || ^15.3.0", "graphql@^15.8.0":
+  "integrity" "sha512-5gghUc24tP9HRznNpV2+FIoq3xKkj5dTQqf4v0CpdPbFVwFkWoxOM+o+2OC9ZSvjEMTjfmG9QT+gcvggTwW1zw=="
+  "resolved" "https://registry.npmjs.org/graphql/-/graphql-15.8.0.tgz"
+  "version" "15.8.0"
+
 "handle-thing@^2.0.0":
   "integrity" "sha512-9Qn4yBxelxoh2Ow62nP+Ka/kMnOXRi8BXnRaUwezLNhqelnN49xKz4F/dPP8OYLxLxq6JDtZb2i9XznUQbNPTg=="
   "resolved" "https://registry.npmjs.org/handle-thing/-/handle-thing-2.0.1.tgz"
@@ -5371,6 +5386,17 @@
     "inherits" "2.0.3"
     "setprototypeof" "1.1.0"
     "statuses" ">= 1.4.0 < 2"
+
+"http-errors@1.8.0":
+  "integrity" "sha512-4I8r0C5JDhT5VkvI47QktDW75rNlGVsUf/8hzjCC/wkWI/jdTRmBb9aI7erSG82r1bjKY3F6k28WnsVxB1C73A=="
+  "resolved" "https://registry.npmjs.org/http-errors/-/http-errors-1.8.0.tgz"
+  "version" "1.8.0"
+  dependencies:
+    "depd" "~1.1.2"
+    "inherits" "2.0.4"
+    "setprototypeof" "1.2.0"
+    "statuses" ">= 1.5.0 < 2"
+    "toidentifier" "1.0.0"
 
 "http-errors@1.8.1":
   "integrity" "sha512-Kpk9Sm7NmI+RHhnj6OIWDI1d6fIoFAtFt9RLaTMRlg/8w49juAStsrBgp0Dp4OdxdVbRIeKhtCUvoi/RuAhO4g=="
@@ -7910,7 +7936,7 @@
   "resolved" "https://registry.npmjs.org/range-parser/-/range-parser-1.2.1.tgz"
   "version" "1.2.1"
 
-"raw-body@2.4.3":
+"raw-body@^2.4.1", "raw-body@2.4.3":
   "integrity" "sha512-UlTNLIcu0uzb4D2f4WltY6cVjLi+/jEN4lgEUj3E04tpMDpUlkBo/eSn6zou9hum2VMNpCCUone0O0WeJim07g=="
   "resolved" "https://registry.npmjs.org/raw-body/-/raw-body-2.4.3.tgz"
   "version" "2.4.3"
@@ -9046,6 +9072,11 @@
   "version" "5.0.1"
   dependencies:
     "is-number" "^7.0.0"
+
+"toidentifier@1.0.0":
+  "integrity" "sha512-yaOH/Pk/VEhBWWTlhI+qXxDFXlejDGcQipMlyxda9nthulaxLZUNcUqFxokp0vcYnvteJln5FNQDRrxj3YcbVw=="
+  "resolved" "https://registry.npmjs.org/toidentifier/-/toidentifier-1.0.0.tgz"
+  "version" "1.0.0"
 
 "toidentifier@1.0.1":
   "integrity" "sha512-o5sSPKEkg/DIQNmH43V0/uerLrpzVedkUh8tGNvaeXpfpuwjKenlSox/2O/BTlZUtEe+JG7s5YhEz608PlAHRA=="
